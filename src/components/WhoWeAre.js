@@ -11,8 +11,17 @@ const WhoWeAre = () => {
           <div className="d-flex align-items-center justify-content-center h-100">
             {/* Your text content here */}
             <div>
-              <h1>Who We Are</h1>
-              <p>Your description</p>
+              <h1>About Mindfinia</h1>
+             
+          <p className="paragraph">
+            Welcome to Gravity Infosolutions, a visionary force reshaping the
+            landscape of Digital Transformation, CRM, and Cloud Consulting. We
+            ignite a global revolution in IT Services, forging strategic
+            alliances with industry giants like Salesforce, AWS, Google Cloud,
+            and Dynamics 365. Our mission? To empower businesses with the tools
+            and strategies they need to not only thrive but surpass all
+            expectations, delivering unprecedented growth on a global scale.
+          </p>
             </div>
           </div>
         </div>
