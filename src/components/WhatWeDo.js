@@ -1,12 +1,13 @@
 import React, { useState, useRef } from "react";
-import iconOne from "../images/iconone.png";
-import iconTwo from "../images/icontwo.png";
-import iconThree from "../images/iconthree.png";
+import iconOne from "../images/icn1.png";
+import iconTwo from "../images/icn2.png";
+import iconThree from "../images/icn3.png";
 
 const Card = (props) => {
   const { image, title, desc, isActive } = props;
 
   return (
+    
     <div
       className={`card cardStyle ${isActive ? "active" : ""}`}
       style={{
@@ -149,6 +150,7 @@ const WhatWeDo = () => {
   ];
 
   return (
+  <div id="what-we-do-section">
     <div className="div" style={{ background: "#F7FEFF" }}>
       <div className="container" style={{ width: "90%", margin: "auto" }}>
         <hr
@@ -161,6 +163,7 @@ const WhatWeDo = () => {
         <h1 style={{ textAlign: "center" }}>Services we offer</h1>
         <CardContainer cards={cardData} />
       </div>
+    </div>
     </div>
   );
 };
