@@ -6,6 +6,10 @@
   height: 40vmin;
   pointer-events: none;
 }
+/* Add an underline to the text when hovering over NavLink */
+.nav-link:hover {
+  text-decoration: underline;
+}
 
 @media (prefers-reduced-motion: no-preference) {
   .App-logo {

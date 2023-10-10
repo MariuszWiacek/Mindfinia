@@ -1,24 +1,36 @@
-import logo from './logo.svg';
-import './App.css';
+import React from "react";
+import "./App.css";
+import "bootstrap/dist/css/bootstrap.min.css";
+import "bootstrap/dist/js/bootstrap.bundle.min.js";
+import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
+import Home from "./pages/Home";
+import Navbar from "./components/Navbar";
+import Landing from "./components/Landing";
+import AboutUs from "./pages/AboutUs";
+import WhoWeAre from "./components/WhoWeAre";
+import WhatWeDo from "./components/WhatWeDo";
+import Solution from "./components/Solution";
+import ContactUs from "./components/ContactUs";
+import NavLayout from "./components/NavLayout";
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Router>
+      <NavLayout>
+        <Navbar />
+        <Landing />
+      </NavLayout>
+      <div className="container">
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/about-us" element={<AboutUs />} />
+          <Route path="/who-we-are" element={<WhoWeAre />} />
+          <Route path="/what-we-do" element={<WhatWeDo />} />
+          <Route path="/solution" element={<Solution />} />
+          <Route path="/contact" element={<ContactUs />} />
+        </Routes>
+      </div>
+    </Router>
   );
 }
 

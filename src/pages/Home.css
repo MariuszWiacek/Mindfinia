@@ -1,0 +1,13 @@
+/* Home.css */
+
+.home-container {
+    height: 100%; /* Set the container height to 100% */
+    width: 100%;
+  }
+  
+  .row {
+    height: 20%; /* Set the height of each row to 20% */
+    border: 1px solid #ccc; /* Add borders or other styling as needed */
+    padding: 10px; /* Add padding for spacing */
+  }
+  

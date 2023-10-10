@@ -1,0 +1,17 @@
+/* Landing.css */
+
+.landing-container {
+    background-image: url("../images/background.png");
+  background-size: cover;
+  background-position: center center;
+  color: #fff; /* Text color for the landing content */
+  
+  /* Set the height of the container */
+  height: 100vh; /* 100% of the viewport height */
+
+  /* Add padding to push content below the navbar */
+  padding-top: 50px; /* Adjust the value to match the navbar height */
+  
+}
+
+
