@@ -4,7 +4,7 @@ import WhatWeDo from "../components/WhatWeDo";
 import Solution from "../components/Solution";
 import ContactUs from "../components/ContactUs";
 import Logo from "../components/logos";
-import Charts from "../components/charts";
+import Charts from "../components/Charts";
 import Logos2 from "../components/logos2"
 import "./Home.css"; // Import a custom CSS file for styling
 
