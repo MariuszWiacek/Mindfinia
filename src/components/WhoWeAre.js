@@ -11,6 +11,7 @@ const WhoWeAre = () => {
           <div className="d-flex align-items-center justify-content-center h-100">
             {/* Your text content here */}
             <div>
+            <hr className="hr-styled" />
               <h1>About Mindfinia</h1>
              
           <p className="paragraph">
@@ -55,7 +56,7 @@ const WhoWeAre = () => {
           {/* Your content for the second row */}
           <div className="d-flex align-items-left justify-content-left">
           <div>
-        <hr />
+        <hr className="hr-styled"/>
         <h1>Meet the people<br></br>We are Working With</h1><br></br></div><br></br>
           </div>
         </div>

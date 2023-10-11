@@ -31,6 +31,16 @@
 .App-link {
   color: #61dafb;
 }
+/* styles.css or your preferred CSS file */
+.hr-styled {
+  width: 2cm;
+  height: 6px; /* Adjust the height to control the line thickness */
+  background-color: rgb(47, 0, 255);
+  text-align: center;
+  
+ 
+}
+
 
 @keyframes App-logo-spin {
   from {

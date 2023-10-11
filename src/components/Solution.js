@@ -10,8 +10,8 @@ const Solution = () => {
       <div className="d-flex align-items-center justify-content-center h-100">
         {/* Your text content here */}
         <div>
-        <hr />
-        <h1>Why Choose Us</h1><br></br>
+        
+        <hr className="hr-styled" /><h1>Why Choose Us</h1><br></br>
         <h6 className="heading">
           UNMATCHED EXPERTISE, EMPOWERING SCALABILITY, & IRRESISTIBLE
           COMPETITIVE PRICING

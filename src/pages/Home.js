@@ -5,8 +5,10 @@ import Solution from "../components/Solution";
 import ContactUs from "../components/ContactUs";
 import Logo from "../components/logos";
 import Charts from "../components/Charts";
-import Logos2 from "../components/logos2"
-import "./Home.css"; // Import a custom CSS file for styling
+import Logos2 from "../components/logos2";
+import Customers from "../components/Customers";
+import Workflow from "../components/Workflow";
+import "./Home.css"; 
 
 const Home = () => {
   return (
@@ -41,6 +43,16 @@ const Home = () => {
           <Logos2 />
         </div>
       </div>
+      { <div className="row">
+        <div className="col-12">
+          <Customers />
+        </div>
+      </div> }
+      <div className="row">
+        <div className="col-12">
+          <Workflow />
+        </div>
+      </div> */}
       <div className="row">
         <div className="col-12">
           <ContactUs />
