@@ -3,6 +3,7 @@ import WhoWeAre from "../components/WhoWeAre";
 import WhatWeDo from "../components/WhatWeDo";
 import Solution from "../components/Solution";
 import ContactUs from "../components/ContactUs";
+import Logo from "../components/logos"
 import "./Home.css"; // Import a custom CSS file for styling
 
 const Home = () => {
@@ -13,6 +14,10 @@ const Home = () => {
           <WhoWeAre />
         </div>
       </div>
+      <div className="row">
+        <div className="col-12">
+          <Logo />
+        </div></div>
       <div className="row">
         <div className="col-12">
           <WhatWeDo />

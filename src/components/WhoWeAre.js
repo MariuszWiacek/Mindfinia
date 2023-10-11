@@ -56,9 +56,6 @@ const WhoWeAre = () => {
           <div className="d-flex align-items-center justify-content-center h-50">
             <p>Meet the people <br></br>we are working with</p>
           </div>
-          <div className="d-flex align-items-center justify-content-center h-50">
-            <p>logos</p>
-          </div>
         </div>
       </div>
     </div>
