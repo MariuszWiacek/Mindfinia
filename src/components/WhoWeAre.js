@@ -53,8 +53,10 @@ const WhoWeAre = () => {
         {/* Full-width row */}
         <div className="col">
           {/* Your content for the second row */}
-          <div className="d-flex align-items-center justify-content-center h-50">
-            <p>Meet the people <br></br>we are working with</p>
+          <div className="d-flex align-items-left justify-content-left">
+          <div>
+        <hr />
+        <h1>Meet the people<br></br>We are Working With</h1><br></br></div><br></br>
           </div>
         </div>
       </div>

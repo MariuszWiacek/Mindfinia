@@ -3,7 +3,6 @@ import "../App.css";
 import addclip from "../images/addclip.png";
 import bImage from "../images/b.png";
 import click from "../images/clickorder.png";
-import logothree from "../images/logothree.png";
 import pjc from "../images/pjc.png";
 import sampath from "../images/sampath.png";
 import techmate from "../images/techmate.png";
