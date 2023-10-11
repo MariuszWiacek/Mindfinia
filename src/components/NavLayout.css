@@ -2,10 +2,9 @@
 
 .nav-layout {
     background-image: url("../images/background.png");
-    background-position: center center;
+    background-position: center ;
     color: #fff; /* Text color for the content */
     height: 100vh; /* 100% of the viewport height */
-    overflow: auto; /* Allow scrolling if content exceeds viewport */
-    /* Add any other background-related styles here */
+    
   }
   

@@ -28,8 +28,8 @@ const Navbar = () => {
           <ul className="navbar-nav">
             <li className="nav-item">
               <button
-                onClick={() => handleClick("landing-section", "Home")} // Pass button name as a parameter
-                className={`nav-link btn ${
+                onClick={() => handleClick("Home")} // Pass button name as a parameter
+                className={`nav-link ${
                   activeButton === "Home" ? "btn-dark" : "btn-light"
                 } text-white`}
               >

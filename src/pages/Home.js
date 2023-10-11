@@ -1,5 +1,4 @@
 import React from "react";
-import Landing from "../components/Landing";
 import WhoWeAre from "../components/WhoWeAre";
 import WhatWeDo from "../components/WhatWeDo";
 import Solution from "../components/Solution";
@@ -9,11 +8,6 @@ import "./Home.css"; // Import a custom CSS file for styling
 const Home = () => {
   return (
     <div className="container home-container">
-      <div className="row">
-        <div className="col-12">
-          <Landing />
-        </div>
-      </div>
       <div className="row">
         <div className="col-12">
           <WhoWeAre />

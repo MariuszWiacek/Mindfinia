@@ -19,7 +19,7 @@ const bottomBarStyle = {
   textAlign: "center",
   textTransform: "uppercase",
   width: "100%",
-  alignItems: "bottom",
+  
   fontWeight: "bold",
   
 };
@@ -32,21 +32,15 @@ const textStyle = {
 const Landing = () => {
   return (
     <div id="landing-section" style={landingStyle}>
-      <div className="landingText" style={textStyle}>
-        <p className="lead fs-3">
-          "Mindfinia" combines intellectual expertise ("Mind") with limitless
-          technological possibilities ("Finia"), encapsulating a promise of
-          strategic insight and boundless solutions for technology consulting
-          and services
-        </p>
-      </div>
-      
-    
-    <div className="bottom-bar" style={bottomBarStyle}>
-    Improvement Quality Customer Satisfaction Transparency
-  </div>
-  </div>
+      <p className="lead fs-3" style={textStyle}>
+        "Mindfinia" combines intellectual expertise ("Mind") with limitless
+        technological possibilities ("Finia"), encapsulating a promise of
+        strategic insight and boundless solutions for technology consulting
+        and services
+      </p>
+    </div>
   );
 };
+
 
 export default Landing;
