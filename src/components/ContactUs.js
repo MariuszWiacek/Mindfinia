@@ -3,13 +3,13 @@ import logo from "../images/logo.png";
 import { FaFacebook, FaTwitter, FaInstagram } from "react-icons/fa";
 
 const smallFontStyle = {
-  fontFamily: "Your Desired Font, sans-serif", 
+  fontFamily: "arial, sans-serif", 
   fontSize: "12px", 
 };
 
 const ContactUs = () => {
   return (
-    <footer id="contact-us-section" style={{ background: "#001a00", color: "#fff" }}>
+    <footer id="contact-us-section" style={{ background: "#013220", color: "#fff" }}>
       <div className="container">
         <div className="row">
           {/* First Column */}
@@ -27,7 +27,7 @@ const ContactUs = () => {
           {/* Second Column */}
           <div className="col-md-4">
             <h3>Links</h3>
-            <ul className="list-unstyled">
+            <ul className="list-unstyled" >
               <li><a href="/">Home</a></li>
               <li><a href="/about">About Us</a></li>
               <li><a href="/services">Services</a></li>

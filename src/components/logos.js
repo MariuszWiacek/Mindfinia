@@ -26,8 +26,8 @@ const Logo = () => {
 
   const containerStyle = {
     display: "flex",
-    flexDirection: "row", // Change to "row" for horizontal alignment
-    overflowX: "auto",   // Enable horizontal scrolling if needed
+    flexDirection: "row", 
+    overflowX: "auto",   
   };
 
   return (

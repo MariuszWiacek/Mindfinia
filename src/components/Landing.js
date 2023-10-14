@@ -8,7 +8,7 @@ const landingStyle = {
   fontWeight: "bold",
   margin: "10%",
   color: "#fff",
-  padding: "20px",
+  padding: "0px",
 };
 
 const textStyle = {
@@ -29,7 +29,7 @@ const bottomBarStyle = {
 };
 
 const bottomBarWords = [
-  "PTABILITY",
+  "STABILITY",
   "EXPERTISE",
   "INTEGRITY",
   "IMPROVEMENT",
@@ -42,22 +42,33 @@ const bottomBarWords = [
 
 const Landing = () => {
   return (
-    <div>
-      <div id="landing-section" style={landingStyle}>
-        <p className="lead fs-3" style={textStyle}>
-          "Mindfinia" combines intellectual expertise ("Mind") with limitless
-          technological possibilities ("Finia"), encapsulating a promise of
-          strategic insight and boundless solutions for technology consulting
-          and services
-        </p>
+    <div className="container-fluid">
+      <div className="row">
+        <div className="col-md-12">
+          <div style={landingStyle}>
+            <p  style={textStyle}>
+              "Mindfinia" combines intellectual expertise ("Mind") with limitless
+              technological possibilities ("Finia"), encapsulating a promise of
+              strategic insight and boundless solutions for technology consulting
+              and services
+            </p>
+          </div>
+          <div style={bottomBarStyle}>
+            {bottomBarWords.map((word, index) => (
+              <div key={index}>{word}</div>
+            ))}
+          </div>
+        </div>
       </div>
-
-      <div style={bottomBarStyle}>
-        {bottomBarWords.map((word, index) => (
-          <div key={index}>{word}</div>
-        ))}
+      
+      <div className="row"> {/* Add margin-top to create space between components */}
+        <div className="col-md-12">
+          
+        </div>
       </div>
+      
     </div>
+    
   );
 };
 

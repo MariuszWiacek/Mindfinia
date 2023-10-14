@@ -33,13 +33,14 @@
 }
 /* styles.css or your preferred CSS file */
 .hr-styled {
-  width: 2cm;
-  height: 6px; /* Adjust the height to control the line thickness */
-  background-color: rgb(47, 0, 255);
-  text-align: center;
-  
  
-}
+    border-top: none !important;
+    border: none;
+    height: 5px;
+    background-color: #6ad7e5;
+    width: 5%;
+  }
+
 
 
 @keyframes App-logo-spin {

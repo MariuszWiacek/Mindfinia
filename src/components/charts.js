@@ -25,7 +25,7 @@ const circleStyle = {
   lineHeight: "100px",
   fontSize: "24px",
   textAlign: "center",
-  marginBottom: "20px", 
+  marginBottom: "20px",
 };
 
 const descriptionStyle = {
@@ -43,29 +43,41 @@ const pStyle = {
 
 const Charts = () => {
   return (
-    <div className="charts">
-      <div style={cardContainerStyle}>
-        <div style={cardStyle}>
+    <div className="charts container">
+      <div style={cardContainerStyle} className="row">
+        <div style={cardStyle} className="col-md-4">
           <div style={circleStyle}>100%</div>
           <div style={descriptionStyle}>
-            <h2 style={h2Style}>Title 1</h2>
-            <p style={pStyle}>Some description for the first chart.</p>
+            <h2 style={h2Style}>PROFICIENCY</h2>
+            <p style={pStyle}>
+              Gravity Infosolutions expertise spans consulting, development,
+              integration, delivering tailored high-quality solutions to meet
+              specific industry needs.
+            </p>
           </div>
         </div>
 
-        <div style={cardStyle}>
+        <div style={cardStyle} className="col-md-4">
           <div style={circleStyle}>100%</div>
           <div style={descriptionStyle}>
-            <h2 style={h2Style}>Title 2</h2>
-            <p style={pStyle}>Some description for the second chart.</p>
+            <h2 style={h2Style}>AFFORDABILITY</h2>
+            <p style={pStyle}>
+              Gravity Infosolutions expertise spans consulting, development,
+              integration, delivering tailored high-quality solutions to meet
+              specific industry needs.
+            </p>
           </div>
         </div>
 
-        <div style={cardStyle}>
+        <div style={cardStyle} className="col-md-4">
           <div style={circleStyle}>100%</div>
           <div style={descriptionStyle}>
-            <h2 style={h2Style}>Title 3</h2>
-            <p style={pStyle}>Some description for the third chart.</p>
+            <h2 style={h2Style}>AGILITY</h2>
+            <p style={pStyle}>
+              Gravity Infosolutions expertise spans consulting, development,
+              integration, delivering tailored high-quality solutions to meet
+              specific industry needs.
+            </p>
           </div>
         </div>
       </div>
