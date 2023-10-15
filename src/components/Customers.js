@@ -1,123 +1,212 @@
-import React from "react";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faStar } from "@fortawesome/free-solid-svg-icons";
+import React, { useState } from 'react';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import {
+  faQuoteLeft,
+  faQuoteRight,
+  faStar,
+  faArrowLeft,
+  faArrowRight
+} from '@fortawesome/free-solid-svg-icons';
 import custPicOne from "../images/custPicOne.png";
 import custPicTwo from "../images/custPicTwo.png";
 import custPicThree from "../images/custPicThree.png";
 import custPicFour from "../images/custPicFour.png";
 import custPicFive from "../images/custPicFive.png";
 
-const reviewers = [
+const testimonialStyles = {
+  testimonialSlider: {
+    display: 'flex',
+    flexDirection: 'column',
+    alignItems: 'justify',
+  },
+
+  quoteContainer: {
+    position: 'relative',
+    backgroundColor: 'white',
+    padding: '20px',
+    margin: '10px',
+    borderRadius: '5px',
+    textAlign: 'center',
+    overflow: 'hidden',
+  },
+
+  
+  leftQuote: {
+    position: 'absolute',
+    left: '10px',
+    top: '10px',
+    fontSize: '1.2rem',
+    'fa-primary-color': '#000000', // Customize the primary color
+    'fa-secondary-color': '#ffffff', // Customize the secondary color
+  },
+
+  rightQuote: {
+    position: 'absolute',
+    right: '10px',
+    bottom: '10px',
+    fontSize: '1.2rem',
+    '--fa-primary-color': '#000000', 
+    '--fa-secondary-color': '#ffffff', 
+  },
+  
+
+  quote: {
+    fontSize: '1.5rem',
+  },
+
+  customerCards: {
+    display: 'flex',
+    justifyContent: 'space-around',
+    flexWrap: 'nowrap', 
+    overflowX: 'hidden', 
+  },
+
+  customerCard: {
+    padding: '0px',
+    backgroundColor: 'transparent',
+    boxShadow: 'none',
+    margin: '1px',
+    width: '15%',
+    textAlign: 'center',
+    cursor: 'pointer',
+  },
+
+  active: {
+    border: 'none',
+    filter: 'none', 
+  },
+
+  inactive: {
+    filter: 'blur(1.5px)',
+  },
+
+  controls: {
+    marginTop: '20px',
+    display: 'flex',
+    justifyContent: 'center',
+  },
+
+  controlButton: {
+    padding: '10px 20px',
+    fontSize: '1rem',
+    backgroundColor: '#007BFF',
+    color: '#fff',
+    border: 'none',
+    borderRadius: '50%',
+    cursor: 'pointer',
+    margin: '0 10px',
+  },
+
+  customerImage: {
+    width: '100px',
+    height: '100px',
+    borderRadius: '50%',
+  },
+
+  star: {
+    color: 'gold',
+  },
+};
+
+const testimonials = [
   {
     Image: custPicOne,
-    Rating: 5,
-    Name: "Romeena De Silva",
-    Prof: "Janet Cosmetics",
+    id: 1,
+    quote: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
+    name: 'Romeena De Silva',
+    role: 'Janet Cosmetics',
+    rating: 5,
   },
   {
     Image: custPicTwo,
-    Rating: 5,
-    Name: "Romeena De Silva",
-    Prof: "Janet Cosmetics",
+    id: 2,
+    quote: 'Without any doubt I recommend Alcaline Solutions as one of the best web design and digital marketing agencies. One of the best agencies I’ve came across so far. Wouldn’t be hesitated to introduce their work to someone else.',
+    name: 'Romeena De Silva',
+    role: 'Janet Cosmetics',
+    rating: 5,
   },
   {
     Image: custPicThree,
-    Rating: 5,
-    Name: "Imran Khan",
-    Prof: "Software Engineer",
+    id: 3,
+    quote: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
+    name: 'Jane Smith',
+    role: 'UX Designer',
+    rating: 5,
   },
   {
     Image: custPicFour,
-    Rating: 5,
-    Name: "Romeena De Silva",
-    Prof: "Janet Cosmetics",
+    id: 4,
+    quote: 'Without any doubt I recommend Alcaline Solutions as one of the best web design and digital marketing agencies. One of the best agencies I’ve came across so far. Wouldn’t be hesitated to introduce their work to someone else.',
+    name: 'Romeena De Silva',
+    role: 'Janet Cosmetics',
+    rating: 5,
   },
   {
     Image: custPicFive,
-    Rating: 5,
-    Name: "Romeena De Silva",
-    Prof: "Janet Cosmetics",
+    id: 5,
+    quote: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
+    name: 'Romeena De Silva',
+    role: 'Janet Cosmetics',
+    rating: 5,
   },
 ];
 
-const quotes = [
-  "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quod eos id officiis hic tenetur quae quaerat ad velit ab hic tenetur.",
-  "Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid commodi.",
-  "At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti.",
-  "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quod eos id officiis hic tenetur quae quaerat ad velit ab hic tenetur.",
-  "Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid commodi.",
-];
+const CustomerTestimonial = () => {
+  const defaultActiveIndex = testimonials.findIndex(testimonial => testimonial.id === 3);
+  const [currentTestimonial, setCurrentTestimonial] = useState(defaultActiveIndex);
 
-const Customers = () => {
+  const nextTestimonial = () => {
+    const next = (currentTestimonial + 1) % testimonials.length;
+    setCurrentTestimonial(next);
+  };
+
+  const prevTestimonial = () => {
+    const prev = (currentTestimonial - 1 + testimonials.length) % testimonials.length;
+    setCurrentTestimonial(prev);
+  };
+
   return (
-    <div className="content-wrapper container">
-      <hr className="hrReviews" />
-      <h1 className="mb-4 text-center">Why customers love</h1>
-      <h2 className="text-center mb-5">working with us</h2>
-      <div className="row justify-content-center">
-        <div className="col-12 col-lg-9">
-          <div
-            id="multi-item-carousel"
-            className="carousel slide"
-            data-ride="carousel"
-          >
-            <div className="carousel-inner">
-              {reviewers.map((reviewer, index) => (
-                <div
-                  key={index}
-                  className={`carousel-item ${index === 0 ? "active" : ""}`}
-                >
-                  <div className="row">
-                    {reviewers.map((innerReviewer, innerIndex) => (
-                      <div className="col-md-2" key={innerIndex}>
-                        <img
-                          src={innerReviewer.Image}
-                          alt={innerReviewer.Name}
-                          style={{ width: "100px", height: "100px" }}
-                        />
-                        {[...Array(innerReviewer.Rating)].map((_, idx) => (
-                          <FontAwesomeIcon
-                            key={idx}
-                            icon={faStar}
-                            color="yellow"
-                          />
-                        ))}
-                        <p>{innerReviewer.Name}</p>
-                        <p>{innerReviewer.Prof}</p>
-                      </div>
-                    ))}
-                  </div>
-                </div>
-              ))}
-            </div>
-            <a
-              className="carousel-control-prev"
-              href="#multi-item-carousel"
-              role="button"
-              data-slide="prev"
-            >
-              <span className="carousel-control-prev-icon" aria-hidden="true" />
-              <span className="sr-only">Previous</span>
-            </a>
-            <a
-              className="carousel-control-next"
-              href="#multi-item-carousel"
-              role="button"
-              data-slide="next"
-            >
-              <span className="carousel-control-next-icon" aria-hidden="true" />
-              <span className="sr-only">Next</span>
-            </a>
-          </div>
-        </div>
+    <div style={testimonialStyles.testimonialSlider}>
+      <div style={testimonialStyles.quoteContainer}>
+        <FontAwesomeIcon icon={faQuoteLeft} style={testimonialStyles.leftQuote} />
+        <p style={testimonialStyles.quote}>{testimonials[currentTestimonial].quote}</p>
+        <FontAwesomeIcon icon={faQuoteRight} style={testimonialStyles.rightQuote} />
       </div>
-      <div className="row justify-content-center mt-4">
-        <div className="col-12 text-center">
-          <p className="quote">{quotes[0]}</p>
-        </div>
+      <div style={testimonialStyles.customerCards}>
+        {testimonials.map((testimonial, index) => (
+          <div
+            key={testimonial.id}
+            style={{
+              ...testimonialStyles.customerCard,
+              ...(currentTestimonial === index ? testimonialStyles.active : testimonialStyles.inactive),
+            }}
+            onClick={() => setCurrentTestimonial(index)} 
+          >
+            <div>
+              {[...Array(testimonial.rating)].map((_, i) => (
+                <FontAwesomeIcon key={i} icon={faStar} style={testimonialStyles.star} />
+              ))}
+              <img src={testimonial.Image} alt={`Customer ${testimonial.id}`} style={testimonialStyles.customerImage} />
+              <p>{testimonial.name}</p>
+              <p>{testimonial.role}</p>
+            </div>
+          </div>
+        ))}
+      </div>
+      <div style={testimonialStyles.controls}>
+        <FontAwesomeIcon
+          icon={faArrowLeft}
+          style={testimonialStyles.controlButton}
+          onClick={prevTestimonial}
+        />
+        <FontAwesomeIcon
+          icon={faArrowRight}
+          style={testimonialStyles.controlButton}
+          onClick={nextTestimonial}
+        />
       </div>
     </div>
   );
 };
 
-export default Customers;
+export default CustomerTestimonial;
