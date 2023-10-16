@@ -8,17 +8,12 @@ import Charts from "../components/Charts";
 import Logos2 from "../components/logos2";
 import Customers from "../components/Customers";
 import Workflow from "../components/Workflow";
-import BlackBar from "../components/BlackBar";
+
 import "./Home.css"; 
 
 const Home = () => {
   return (
     <div className="container home-container">
-      <div className="row">
-        <div className="col-12">
-          <BlackBar />
-        </div>
-      </div>
       <div className="row">
         <div className="col-12">
           <WhoWeAre />

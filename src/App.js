@@ -12,6 +12,7 @@ import WhatWeDo from "./components/WhatWeDo";
 import Solution from "./components/Solution";
 import ContactUs from "./components/ContactUs";
 import NavLayout from "./components/NavLayout";
+import BlackBar from "./components/BlackBar";
 
 function App() {
   return (
@@ -19,8 +20,9 @@ function App() {
       <NavLayout>
         <Navbar />
         <Landing />
+        <BlackBar />
       </NavLayout>
-      <div className="container">
+      
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/about-us" element={<AboutUs />} />
@@ -29,7 +31,7 @@ function App() {
           <Route path="/solution" element={<Solution />} />
           <Route path="/contact" element={<ContactUs />} />
         </Routes>
-      </div>
+      
     </Router>
   );
 }

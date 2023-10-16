@@ -1,10 +1,25 @@
 import React from "react";
 import logo from "../images/logo.png";
-import { FaFacebook, FaTwitter, FaInstagram } from "react-icons/fa";
+import { FaFacebook, FaTwitter, FaInstagram, FaLinkedin } from "react-icons/fa";
 
 const smallFontStyle = {
   fontFamily: "arial, sans-serif", 
   fontSize: "12px", 
+};
+const iconStyle = {
+  backgroundColor: "#fff", // Background color for the icons
+  borderRadius: "50%", // Make the icons round
+  display: "inline-flex",
+  alignItems: "center",
+  justifyContent: "center",
+  width: "40px", // Adjust the width and height as needed
+  height: "40px",
+  margin: "5px", // Add some spacing between icons
+};
+
+const iconColorStyle = {
+  color: "#013220", // Color for the icons (e.g., white)
+  fontSize: "20px", // Adjust the icon size as needed
 };
 
 const ContactUs = () => {
@@ -15,13 +30,24 @@ const ContactUs = () => {
          
           <div className="col-md-4">
             <img src={logo} alt="Logo" />
-            <p>Some text about company</p>
-            <div>
-             
-              <a href="#"><FaFacebook /></a>
-              <a href="#"><FaTwitter /></a>
-              <a href="#"><FaInstagram /></a>
+            <p>Lorem Ipsum is simply dummy text of the printing and typesetting
+              industry.</p>
+            <div className="social-icons">
+            <a href="#" style={iconStyle}>
+                <FaFacebook style={iconColorStyle} />
+              </a>
+              <a href="#" style={iconStyle}>
+                <FaInstagram style={iconColorStyle} />
+              </a>
+              <a href="#" style={iconStyle}>
+                <FaTwitter style={iconColorStyle} />
+              </a>
+              <a href="#" style={iconStyle}>
+                <FaLinkedin style={iconColorStyle} />
+              </a>
             </div>
+             
+      
           </div>
 
           
@@ -38,12 +64,13 @@ const ContactUs = () => {
           </div>
 
          
-          <div className="col-md-4">
-            <h3>Contact Us</h3>
-            <p>123 Main Street</p>
-            <p>City, Country</p>
-            <p>Email: example@example.com</p>
-            <p>Phone: +123 456 7890</p>
+          <div className="col-md-4 text-light">
+            <h3>Contact us</h3>
+            <p>
+              Lorem Ipsum is simply dummy text of the printing and typesetting
+              industry.
+            </p>
+            <p>+923183561921</p>
           </div>
         </div>
         
@@ -51,7 +78,9 @@ const ContactUs = () => {
         <div className="row">
           <div className="col">
             
-            <p className="text-center" style={smallFontStyle}>&copy; 2023 whatever</p>
+          <p className="text-white-50 text-center">
+          © 2023 Copyright by IK Developers. All rights reserved.
+        </p>
           </div>
         </div>
       </div>

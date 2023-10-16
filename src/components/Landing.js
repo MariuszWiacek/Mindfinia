@@ -1,4 +1,5 @@
 import React from "react";
+import BlackBar from "./BlackBar";
 
 const landingStyle = {
   display: "flex",
@@ -35,11 +36,7 @@ const Landing = () => {
         </div>
       </div>
       
-      <div className="row"> 
-        <div className="col-md-12">
-          
-        </div>
-      </div>
+      
       
     </div>
     

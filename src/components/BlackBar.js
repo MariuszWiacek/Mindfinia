@@ -10,6 +10,9 @@ const bottomBarStyle = {
     fontWeight: "bold",
     display: "flex",
     justifyContent: "space-around",
+    margin: "0 0 0" , 
+   
+  
     
   };
   
