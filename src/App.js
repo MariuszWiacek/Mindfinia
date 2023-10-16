@@ -2,7 +2,7 @@ import React from "react";
 import "./App.css";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "bootstrap/dist/js/bootstrap.bundle.min.js";
-import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
+import { BrowserRouter as Router, Route, Routes, } from "react-router-dom";
 import Home from "./pages/Home";
 import Navbar from "./components/Navbar";
 import Landing from "./components/Landing";
@@ -17,12 +17,6 @@ import BlackBar from "./components/BlackBar";
 function App() {
   return (
     <Router>
-      <NavLayout>
-        <Navbar />
-        <Landing />
-        <BlackBar />
-      </NavLayout>
-      
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/about-us" element={<AboutUs />} />
@@ -31,6 +25,7 @@ function App() {
           <Route path="/solution" element={<Solution />} />
           <Route path="/contact" element={<ContactUs />} />
         </Routes>
+        
       
     </Router>
   );

@@ -2,20 +2,24 @@ import React, { useState } from "react";
 import logo from "../images/logo.png";
 import { NavLink } from "react-router-dom";
 
-const scrollToSection = (sectionId) => {
-  const section = document.getElementById(sectionId);
-
-  if (section) {
-    section.scrollIntoView({ behavior: "smooth" });
-  }
-};
-
 const Navbar = () => {
-  const [activeButton, setActiveButton] = useState(""); // Initialize state
+  const [activeButton, setActiveButton] = useState("");
 
-  const handleClick = (sectionId, buttonName) => {
-    scrollToSection(sectionId);
-    setActiveButton(buttonName); // Set the active button when clicked
+  const scrollToSection = (sectionId) => {
+    const section = document.getElementById(sectionId);
+
+    if (section) {
+      section.scrollIntoView({ behavior: "smooth" });
+    }
+  };
+
+  const handleNavigation = (sectionId, buttonName) => {
+    if (window.location.pathname !== "/") {
+      window.location.href = "/";
+    } else {
+      scrollToSection(sectionId);
+      setActiveButton(buttonName);
+    }
   };
 
   return (
@@ -28,60 +32,49 @@ const Navbar = () => {
           <ul className="navbar-nav">
             <li className="nav-item">
               <button
-                onClick={() => handleClick("Home")} // Pass button name as a parameter
-                className={`nav-link ${
-                  activeButton === "Home" ? "btn-dark" : "btn-light"
-                } text-white`}
+                onClick={() => handleNavigation("Home", "Home")}
+                className={`nav-link ${activeButton === "Home" ? "btn-dark" : "btn-light"
+                  } text-white`}
               >
                 Home
               </button>
             </li>
             <li className="nav-item">
-              <button
-                onClick={() => handleClick("about-us", "About Us")} 
-                className={`nav-link  ${
-                  activeButton === "About Us" ? "btn-dark" : "btn-light"
-                }text-white`}
-              >
-                About Us
-              </button>
+            <NavLink
+  to="/about-us"
+  className={`nav-link ${activeButton === "About Us" ? "btn-dark" : "btn-light"} ${activeButton === "About Us" ? "text-black" : "text-white"}`}
+>
+  About Us
+</NavLink>
             </li>
             <li className="nav-item">
               <button
-                onClick={() => handleClick("who-we-are-section", "Who We Are")} // Pass button name as a parameter
-                className={`nav-link  ${
-                  activeButton === "Who We Are" ? "btn-dark" : "btn-light"
-                } text-white`}
+                onClick={() => handleNavigation("who-we-are-section", "Who We Are")}
+                className={`nav-link ${activeButton === "Who We Are" ? "btn-dark" : "btn-light"} text-white`}
               >
                 Who We Are
               </button>
             </li>
             <li className="nav-item">
               <button
-                onClick={() => handleClick("what-we-do-section", "What We Do")} // Pass button name as a parameter
-                className={`nav-link  ${
-                  activeButton === "What We Do" ? "btn-dark" : "btn-light"
-                } text-white`}
+                onClick={() => handleNavigation("what-we-do-section", "What We Do")}
+                className={`nav-link ${activeButton === "What We Do" ? "btn-dark" : "btn-light"} text-white`}
               >
                 What We Do
               </button>
             </li>
             <li className="nav-item">
               <button
-                onClick={() => handleClick("solution-section", "Solution")} // Pass button name as a parameter
-                className={`nav-link  ${
-                  activeButton === "Solution" ? "btn-dark" : "btn-light"
-                } text-white`}
+                onClick={() => handleNavigation("solution-section", "Solution")}
+                className={`nav-link ${activeButton === "Solution" ? "btn-dark" : "btn-light"} text-white`}
               >
                 Solution
               </button>
             </li>
             <li className="nav-item">
               <button
-                onClick={() => handleClick("contact-us-section", "Contact Us")} // Pass button name as a parameter
-                className={`nav-link  ${
-                  activeButton === "Contact Us" ? "btn-dark" : "btn-light"
-                } text-white`}
+                onClick={() => handleNavigation("contact-us-section", "Contact Us")}
+                className={`nav-link ${activeButton === "Contact Us" ? "btn-dark" : "btn-light"} text-white`}
               >
                 Contact Us
               </button>

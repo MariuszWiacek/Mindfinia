@@ -1,5 +1,5 @@
 import React from "react";
-import "./NavLayout.css"; // Import a custom CSS file for styling
+import "./NavLayout.css"; 
 
 const NavLayout = ({ children }) => {
   return (

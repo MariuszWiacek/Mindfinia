@@ -1,5 +1,4 @@
 import React from "react";
-import BlackBar from "./BlackBar";
 
 const landingStyle = {
   display: "flex",
@@ -17,29 +16,17 @@ const textStyle = {
   fontSize: "24px",
 };
 
-
-
-const Landing = () => {
+const Landing = ({ text }) => {
   return (
     <div className="container-fluid">
       <div className="row">
         <div className="col-md-12">
           <div style={landingStyle}>
-            <p  style={textStyle}>
-              "Mindfinia" combines intellectual expertise ("Mind") with limitless
-              technological possibilities ("Finia"), encapsulating a promise of
-              strategic insight and boundless solutions for technology consulting
-              and services
-            </p>
+            <p style={textStyle}>{text}</p>
           </div>
-          
         </div>
       </div>
-      
-      
-      
     </div>
-    
   );
 };
 
