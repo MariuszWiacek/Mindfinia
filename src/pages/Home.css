@@ -2,10 +2,15 @@
 
 .home-container {
     height: 100%; /* Set the container height to 100% */
-    width: 100%;
+    width: 100% ;
+    
   }
+
+ 
   
   .row {
+    margin-left: 1%;
+    margin-right: 1%;
     height: 20%; /* Set the height of each row to 20% */
     border: 1px solid #ccc; /* Add borders or other styling as needed */
     padding: 0px; /* Add padding for spacing */

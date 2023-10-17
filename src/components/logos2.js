@@ -43,6 +43,7 @@ const Logos2 = () => {
       </div>
     </div>
     </div>
+    
   );
 };
 

@@ -54,6 +54,7 @@ const WhoWeAre = () => {
             <hr className="hr-styled" />
             <h1>Meet the people</h1>
             <h1>We are Working With</h1>
+            <br></br>
           </div>
         </div>
       </div>

@@ -1,13 +1,13 @@
-import React from "react";
-import "../App.css";
-import addclip from "../images/addclip.png";
-import bImage from "../images/b.png";
-import click from "../images/clickorder.png";
-import pjc from "../images/pjc.png";
-import sampath from "../images/sampath.png";
-import techmate from "../images/techmate.png";
+import React from 'react';
+import Slider from 'react-infinite-logo-slider';
+import addclip from '../images/addclip.png';
+import bImage from '../images/b.png';
+import click from '../images/clickorder.png';
+import pjc from '../images/pjc.png';
+import sampath from '../images/sampath.png';
+import techmate from '../images/techmate.png';
 
-const Logo = () => {
+const Component = () => {
   const images = [
     addclip,
     bImage,
@@ -17,30 +17,21 @@ const Logo = () => {
     techmate,
   ];
 
-  const imageStyle = {
-    width: "100%",
-    height: "auto",
-    maxWidth: "100%",
-    maxHeight: "100%",
-  };
-
-  const containerStyle = {
-    display: "flex",
-    flexDirection: "row", 
-    overflowX: "auto",   
-  };
-
   return (
-    <div className="slider pb-5 bg-light">
-      <div className="slide-track" style={containerStyle}>
-        {images.map((imageSrc, index) => (
-          <div key={index} className={`slide slide-${(index % 9) + 1}`}>
-            <img src={imageSrc} alt={`Slide ${index}`} style={imageStyle} />
-          </div>
-        ))}
-      </div>
-    </div>
+    <Slider
+      width="250px"
+      duration={40}
+      pauseOnHover={true}
+      blurBorders={false}
+      blurBorderColor="#fff"
+    >
+      {images.map((imageSrc, index) => (
+        <Slider.Slide key={index}>
+          <img src={imageSrc} alt={`Slide ${index}`} className="w-36" />
+        </Slider.Slide>
+      ))}
+    </Slider>
   );
 };
 
-export default Logo;
+export default Component;

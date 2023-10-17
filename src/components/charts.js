@@ -5,6 +5,7 @@ const cardContainerStyle = {
   justifyContent: "space-between",
   alignItems: "center",
   margin: "20px 0",
+  
 };
 
 const cardStyle = {
@@ -15,6 +16,7 @@ const cardStyle = {
   display: "flex",
   flexDirection: "column",
   alignItems: "center",
+  border: "none", background: "#F7F7FA"
 };
 
 const circleStyle = {
@@ -43,7 +45,15 @@ const pStyle = {
 
 const Charts = () => {
   return (
-    <div className="charts container">
+    <div className="charts container"
+    style={{
+      display: "flex",
+      flexDirection: "column",
+      justifyContent: "center",
+      alignItems: "center",
+      minHeight: "50vh",
+      background: "#F7F7FA",
+    }}>
       <div style={cardContainerStyle} className="row">
         <div style={cardStyle} className="col-md-4">
           <div style={circleStyle}>100%</div>

@@ -15,8 +15,8 @@ const landingBackground = {
 };
 
 const cardStyle = {
-  border: "none", // Remove borders
-  borderRadius: "10px", // Add rounded corners
+  border: "none", 
+  borderRadius: "10px", 
 };
 
 const aboutUsText = (

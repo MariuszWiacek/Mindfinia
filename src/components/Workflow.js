@@ -1,16 +1,4 @@
-import React from "react";
-import Trophy from "../images/b.png";
-
-const TimelineItem = ({ period, title, desc, position, id }) => (
-  <div className={`timeline-content ${position}`}>
-    <div className="header-section">
-      <div className="timeline-id">{id}</div>
-      <div className="timeline-title">{title}</div>
-      <div className="timeline-period">{period}</div>
-    </div>
-    <p>{desc}</p>
-  </div>
-);
+import React from 'react';
 
 const WorkFlow = () => {
   const ourWork = [
@@ -23,7 +11,7 @@ const WorkFlow = () => {
     {
       id: "#2",
       period: "02",
-      title: "Planning       ",
+      title: "Planning",
       desc: "Sprint roadmap  is a collective planning effort. Team members collaborate to clarify items and ensure shared understanding.",
     },
     {
@@ -41,54 +29,33 @@ const WorkFlow = () => {
   ];
 
   return (
-    <div className="workflow">
-      <div>
-        <hr className="hrwork" />
-        <h2 className="flow">Work Flow</h2>
+    <div className="container">
+      <div style={{ textAlign: "center" }}>
+        <hr
+          style={{
+            textAlign: "center !important",
+            border: 'none',
+            borderTop: 'none !important',
+            height: '5px',
+            background: '#0049e5',
+            
+          }} />
+        <h1>Work Flow</h1>
         <h1>How we Work</h1>
+        <br></br>
       </div>
-      <div className="timeline">
-        <div className="timeline-line">
-          <div className="line1"></div>
-          <div className="line2"></div>
-          <div className="line3"></div>
-          <div className="line4"></div>
-        </div>
-        <img className="trophy" src={Trophy} alt="trophy" />
-
-        {/* Render top items */}
-        <div className="top-items">
-          {ourWork.map(
-            (step, index) =>
-              index % 2 === 0 && (
-                <TimelineItem
-                  key={index}
-                  id={step.id}
-                  period={step.period}
-                  title={step.title}
-                  desc={step.desc}
-                  position="top"
-                />
-              )
-          )}
-        </div>
-
-        {/* Render bottom items */}
-        <div className="bottom-items">
-          {ourWork.map(
-            (step, index) =>
-              index % 2 !== 0 && (
-                <TimelineItem
-                  key={index}
-                  id={step.id}
-                  period={step.period}
-                  title={step.title}
-                  desc={step.desc}
-                  position="bottom"
-                />
-              )
-          )}
-        </div>
+      <div className="row">
+        {ourWork.map((work, index) => (
+          <div key={index} className="col-md-3 mt-2">
+            <div className="card">
+              <div className="card-body">
+                <h5 className="card-title">{work.title}</h5>
+                <h6 className="card-subtitle mb-2 text-muted">{work.period}</h6>
+                <p className="card-text">{work.desc}</p>
+              </div>
+            </div>
+          </div>
+        ))}
       </div>
     </div>
   );

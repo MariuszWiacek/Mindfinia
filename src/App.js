@@ -11,8 +11,7 @@ import WhoWeAre from "./components/WhoWeAre";
 import WhatWeDo from "./components/WhatWeDo";
 import Solution from "./components/Solution";
 import ContactUs from "./components/ContactUs";
-import NavLayout from "./components/NavLayout";
-import BlackBar from "./components/BlackBar";
+
 
 function App() {
   return (
