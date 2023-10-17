@@ -7,7 +7,6 @@ const Card = (props) => {
   const { image, title, desc, isActive } = props;
 
   return (
-    
     <div
       className={`card cardStyle ${isActive ? "active" : ""}`}
       style={{
@@ -16,9 +15,9 @@ const Card = (props) => {
         overflow: "hidden",
         borderRadius: "6px",
         cursor: "pointer",
-        boxShadow: "5px 5px 10px #6AD7E5", // Add boxShadow property
-        transition: "transform 0.2s ease-in-out", // Add transition property
-        transform: isActive ? "translateY(10px)" : "none", // Move the active card down slightly
+        boxShadow: "5px 5px 10px #6AD7E5",
+        transition: "transform 0.2s ease-in-out",
+        transform: isActive ? "translateY(10px)" : "none",
       }}
     >
       <img
@@ -27,11 +26,10 @@ const Card = (props) => {
         style={{
           width: "50px",
           height: "50px",
-          objectFit: "center",
-          borderRadius: "9999px",
-          border: "1px #6AD7E5 solid",
-          paddingLeft: "10px",
-          paddingRight: "10px",
+          objectFit: "cover",
+          borderRadius: "50%",
+          border: "1px solid #6AD7E5",
+          padding: "10px",
           marginLeft: "10px",
           marginTop: "10px",
         }}
@@ -65,8 +63,7 @@ const Card = (props) => {
 const CardContainer = (props) => {
   const [activeIndex, setActiveIndex] = useState(0);
   const containerRef = useRef(null);
-
-  const cardWidth = 272; 
+  const cardWidth = 272;
 
   const handleIndexChange = (index) => {
     setActiveIndex(index);
@@ -86,7 +83,7 @@ const CardContainer = (props) => {
           padding: "1rem",
           overflowX: "hidden",
           position: "relative",
-          transition: "scroll-left 0.5s", // Updated duration to 0.5s for smoother movement
+          transition: "scroll-left 0.5s",
         }}
       >
         {props.cards.map((card, index) => (
@@ -150,15 +147,12 @@ const WhatWeDo = () => {
   ];
 
   return (
-  <div id="what-we-do-section">
-    <div className="div" style={{ background: "#F7FEFF" }}>
-      <div className="container" style={{ textAlign:"center",  alignItems:"center", width: "90%", margin: "auto" }}>
-        <br></br>
-       <div><hr className="hr-styled" style={{alignItems:"center", top: "50%"}} /></div>
+    <div id="what-we-do-section" style={{ background: "#F7FEFF" }}>
+      <div className="container" style={{ textAlign: "center", width: "90%", margin: "auto" }}>
+        <hr className="hr-styled" />
         <h1>Services we offer</h1>
         <CardContainer cards={cardData} />
       </div>
-    </div>
     </div>
   );
 };

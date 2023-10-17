@@ -26,13 +26,24 @@ const Navbar = () => {
   const isAboutUsPage = location.pathname.startsWith("/about-us");
 
   return (
-    <nav className="navbar navbar-expand-lg bg-transparent border-bottom">
+    <nav className="navbar navbar-expand-lg navbar-light bg-transparent border-bottom">
       <div className="container-fluid">
         <NavLink to="/" className="navbar-brand">
           <img className="navLogo" src={logo} alt="Logo" />
         </NavLink>
-        <div className="collapse navbar-collapse d-flex justify-content-end">
-          <ul className="navbar-nav">
+        <button
+          className="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarNav"
+          aria-controls="navbarNav"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span className="navbar-toggler-icon"></span>
+        </button>
+        <div className="collapse navbar-collapse" id="navbarNav">
+          <ul className="navbar-nav ms-auto">
             <li className="nav-item">
               <button
                 onClick={() => handleNavigation("Home", "Home")}
@@ -76,12 +87,17 @@ const Navbar = () => {
               </button>
             </li>
             <li className="nav-item">
-              <button
-                onClick={() => handleNavigation("contact-us-section", "Contact Us")}
+              <a
+                href="#contact-us-section"
                 className={`nav-link ${activeButton === "Contact Us" || isAboutUsPage ? "btn-dark text-black" : "btn-light text-white"}`}
+                onClick={(e) => {
+                  e.preventDefault();
+                  scrollToSection("contact-us-section");
+                  setActiveButton("Contact Us");
+                }}
               >
                 Contact Us
-              </button>
+              </a>
             </li>
           </ul>
         </div>

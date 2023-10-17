@@ -9,41 +9,68 @@ import php from "../images/logos/PHP.png";
 import python from "../images/logos/Python.png";
 import ruby from "../images/logos/RubyOnRails.png";
 
-const Logos2 = () => {
-  return (
-    <div style={{
-        textAlign:"center",
-        alignContent:"center",
-    }}>
-        <hr className="hr-styled"></hr>
-        <h1>Our<br></br> Valued Customer</h1>
-       
+const mediaQuery = `@media screen and (max-width: 768px) {
+  .logo-group {
+    max-width: 400px;
+  }
+}`;
 
-<div
-      style={{
-        display: "flex",
-        flexDirection: "column",
-        alignItems: "center",
-        justifyContent: "center",
-        height: "100%",
-      }}
-    >
-      <div style={{ display: "flex", justifyContent: "center" }}>
-        <img className="node" src={nodejs} alt="node" />
-        <img className="php" src={php} alt="php" />
-        <img className="Mysql" src={mysql} alt="mysql" />
-        <img className="java" src={java} alt="java" />
-        <img className="net" src={Netcore} alt="net" />
-      </div>
-      <div style={{ display: "flex", justifyContent: "center" }}>
-        <img className="python" src={python} alt="python" />
-        <img className="rails" src={ruby} alt="ruby" />
-        <img className="go" src={go} alt="go" />
-        <img className="mongo" src={mongo} alt="mongoDb" />
+const Logos2 = () => {
+  const containerStyles = {
+    textAlign: "center",
+  };
+
+  const hrStyles = {
+    /* Define your horizontal rule styling */
+  };
+
+  const headingStyles = {
+    /* Define your heading styling */
+  };
+
+  const logosWrapperStyles = {
+    display: "flex",
+    flexDirection: "column",
+    alignItems: "center",
+    justifyContent: "center",
+    height: "100%",
+  };
+
+  const logoGroupStyles = {
+    display: "flex",
+    justifyContent: "center",
+    flexWrap: "wrap",
+    maxWidth: "800px",
+    margin: "0 auto",
+  };
+
+  const logoStyles = {
+    maxWidth: "100%",
+    height: "auto",
+  };
+
+  return (
+    <div style={containerStyles}>
+      <hr style={hrStyles} />
+      <h1 style={headingStyles}>Our Valued Customer</h1>
+
+      <div style={logosWrapperStyles}>
+        <style>{mediaQuery}</style>
+        <div style={logoGroupStyles} className="logo-group">
+          <img style={logoStyles} src={nodejs} alt="node" />
+          <img style={logoStyles} src={php} alt="php" />
+          <img style={logoStyles} src={mysql} alt="mysql" />
+          <img style={logoStyles} src={java} alt="java" />
+          <img style={logoStyles} src={Netcore} alt="net" />
+        </div>
+        <div style={logoGroupStyles} className="logo-group">
+          <img style={logoStyles} src={python} alt="python" />
+          <img style={logoStyles} src={ruby} alt="ruby" />
+          <img style={logoStyles} src={go} alt="go" />
+          <img style={logoStyles} src={mongo} alt="mongoDb" />
+        </div>
       </div>
     </div>
-    </div>
-    
   );
 };
 

@@ -6,7 +6,6 @@ import Ourmission from "../images/ourmission.png";
 import aboutImage from "../images/aboutImage.png";
 import ContactUs from "../components/ContactUs";
 
-
 const aboutUsBackground = {
   backgroundColor: "white",
 };
@@ -32,10 +31,11 @@ const p2Style = {
 };
 
 const aboutUsText = (
-  <div className="HeroAbout d-flex flex-column align-items-center justify-content-center"
-  style={{color:"black"}}>
-    <h1>About Mindfinia</h1>
-    <p style={p2Style }>
+  <div className="HeroAbout d-flex flex-column align-items-center justify-content-center">
+    <h1 style={{ color: "black", textAlign: "center", fontFamily: "Syne", fontSize: "32px", fontStyle: "normal", fontWeight: "600", lineHeight: "154.5%" }}>
+      About Mindfinia
+    </h1>
+    <p style={p2Style}>
       Welcome to Gravity Infosolutions, a visionary force reshaping the
       landscape of Digital Transformation, CRM, and Cloud Consulting. We ignite
       a global revolution in IT Services, forging strategic alliances with
@@ -48,25 +48,23 @@ const aboutUsText = (
       className="Imagehero d-flex justify-content-center"
       src={aboutImage}
       alt="about us image"
-      style={{width: '100%', height: '100%', borderRadius: 20}}
+      style={{ width: '100%', height: 'auto', borderRadius: 20 }}
     />
   </div>
 );
 
 const AboutUs = () => {
   return (
-    <>
-      <div style={aboutUsBackground}>
-        <Navbar />
-        <div style={landingBackground}>
-          <Landing text={aboutUsText} />
-        </div>
+    <div style={aboutUsBackground}>
+      <Navbar />
+      <div style={landingBackground}>
+        <Landing text={aboutUsText} />
       </div>
       <div className="container">
         <div className="col-md-12 mx-2 d-flex flex-column align-items-center w-100">
           <hr />
-          <h1>Who Are We</h1>
-          <p>
+          <h1 style={{ color: "black", textAlign: "center", fontFamily: "Syne", fontSize: "32px", fontStyle: "normal", fontWeight: "600", lineHeight: "154.5%" }}>Who Are We</h1>
+          <p style={p2Style}>
             Welcome to Gravity Infosolutions, a visionary force reshaping the
             landscape of Digital Transformation, CRM, and Cloud Consulting. We
             ignite a global revolution in IT Services, forging strategic
@@ -75,7 +73,7 @@ const AboutUs = () => {
             and strategies they need to not only thrive but surpass all
             expectations, delivering unprecedented growth on a global scale.
           </p>
-          <p>
+          <p style={p2Style}>
             Welcome to Gravity Infosolutions, a visionary force reshaping the
             landscape of Digital Transformation, CRM, and Cloud Consulting. We
             ignite a global revolution in IT Services, forging strategic
@@ -91,7 +89,7 @@ const AboutUs = () => {
               <div className="card-body d-flex flex-row">
                 <div className="col-md-6">
                   <h3>Our Vision</h3>
-                  <p>
+                  <p style={p2Style}>
                     Welcome to Gravity Infosolutions, a visionary force
                     reshaping the landscape of Digital Transformation, CRM, and
                     Cloud Consulting. We ignite a global revolution in IT Services,
@@ -102,12 +100,12 @@ const AboutUs = () => {
                     unprecedented growth on a global scale.
                   </p>
                 </div>
-                <div className="col-md-6">
+                <div className="col-md-6 d-md-flex">
                   <img
                     className="Imagehero"
                     src={Ourvision}
                     alt="Our Vision Image"
-                    style={{ margin: "0" }}
+                    style={{ width: "100%", height: 'auto', margin: "0" }}
                   />
                 </div>
               </div>
@@ -118,16 +116,17 @@ const AboutUs = () => {
           <div className="col-md-12 mx-2">
             <div className="card shadow mb-4" style={cardStyle}>
               <div className="card-body d-flex flex-row">
-                <div className="col-md-6">
+                <div className="col-md-6 d-md-flex">
                   <img
                     className="Imagehero"
                     src={Ourmission}
                     alt="Our Mission Image"
+                    style={{ width: "100%", height: 'auto' }}
                   />
                 </div>
                 <div className="col-md-6">
                   <h3>Our Mission</h3>
-                  <p>
+                  <p style={p2Style}>
                     Welcome to Gravity Infosolutions, a visionary force reshaping
                     the landscape of Digital Transformation, CRM, and Cloud
                     Consulting. We ignite a global revolution in IT Services,
@@ -143,8 +142,10 @@ const AboutUs = () => {
           </div>
         </div>
       </div>
-      <ContactUs />
-    </>
+      <div className="contact-us-section">
+        <ContactUs />
+      </div>
+    </div>
   );
 };
 

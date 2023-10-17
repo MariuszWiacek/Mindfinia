@@ -2,10 +2,7 @@ import React from "react";
 import logo from "../images/logo.png";
 import { FaFacebook, FaTwitter, FaInstagram, FaLinkedin } from "react-icons/fa";
 
-const smallFontStyle = {
-  fontFamily: "arial, sans-serif", 
-  fontSize: "12px", 
-};
+
 const iconStyle = {
   backgroundColor: "#fff", // Background color for the icons
   borderRadius: "50%", // Make the icons round
