@@ -41,6 +41,7 @@ const h2Style = {
 
 const pStyle = {
   fontSize: "14px",
+  color:"black",
 };
 
 const Charts = () => {

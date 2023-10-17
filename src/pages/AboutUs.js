@@ -6,23 +6,36 @@ import Ourmission from "../images/ourmission.png";
 import aboutImage from "../images/aboutImage.png";
 import ContactUs from "../components/ContactUs";
 
+
 const aboutUsBackground = {
-  backgroundColor: "black",
+  backgroundColor: "white",
 };
 
 const landingBackground = {
-  backgroundColor: "#6AD7E5",
+  background: "linear-gradient(to bottom, #6AD7E5 50%, white 50%)",
 };
 
 const cardStyle = {
-  border: "none", 
-  borderRadius: "10px", 
+  border: "none",
+  borderRadius: "10px",
+};
+
+const p2Style = {
+  color: "#3E3E3E",
+  textAlign: "center",
+  fontFamily: "Rubik",
+  fontSize: "18px",
+  fontStyle: "normal",
+  fontWeight: 400,
+  lineHeight: "154.5%", // 27.81px
+  letterSpacing: "0.99px",
 };
 
 const aboutUsText = (
-  <div className="HeroAbout d-flex flex-column align-items-center justify-content-center">
+  <div className="HeroAbout d-flex flex-column align-items-center justify-content-center"
+  style={{color:"black"}}>
     <h1>About Mindfinia</h1>
-    <p>
+    <p style={p2Style }>
       Welcome to Gravity Infosolutions, a visionary force reshaping the
       landscape of Digital Transformation, CRM, and Cloud Consulting. We ignite
       a global revolution in IT Services, forging strategic alliances with
@@ -35,6 +48,7 @@ const aboutUsText = (
       className="Imagehero d-flex justify-content-center"
       src={aboutImage}
       alt="about us image"
+      style={{width: '100%', height: '100%', borderRadius: 20}}
     />
   </div>
 );
@@ -93,7 +107,7 @@ const AboutUs = () => {
                     className="Imagehero"
                     src={Ourvision}
                     alt="Our Vision Image"
-                    style={{margin:"0"}}
+                    style={{ margin: "0" }}
                   />
                 </div>
               </div>

@@ -15,18 +15,26 @@ import BlackBar from "../components/BlackBar";
 
 import "./Home.css";
 
-const HomeText =
-  'Mindfinia combines intellectual expertise ("Mind") with ' +
-  'limitless technological possibilities ("Finia"), encapsulating a ' +
-  "promise of strategic insight and boundless solutions for " +
-  "technology consulting and services";
+const HomeText = (
+  <p style={{
+    color: "#FFF",
+    textAlign: "center",
+    fontFamily: "Syne",
+    fontSize: "32px",
+    fontStyle: "normal",
+    fontWeight: "600",
+    lineHeight: "154.5%", /* 49.44px */
+  }}>
+    Mindfinia combines intellectual expertise ("Mind") with limitless technological possibilities ("Finia"), encapsulating a promise of strategic insight and boundless solutions for technology consulting and services
+  </p>
+);
 
 const Home = () => {
   return (
     <>
       <NavLayout>
         <Navbar />
-        <Landing text={HomeText} />
+        <Landing text={HomeText}  />
       </NavLayout>
 
       <BlackBar />
