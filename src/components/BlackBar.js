@@ -27,7 +27,7 @@ const bottomBarWords = [
 
 const BlackBar = () => {
   return (
-    <div style={bottomBarStyle}>
+    <div style={bottomBarStyle} className="bottom-bar">
       {bottomBarWords.map((word, index) => (
         <h4 className="word" key={index}>
           {word}

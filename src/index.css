@@ -91,29 +91,34 @@ letter-spacing: 0.99px;
       font-size: 18px !important; /* Adjust the font size for mobile devices */
     }
     h4 {
-      font-size: 5px !important; 
+      font-size: 13px !important; 
     }
     p {
       font-size: 14px;
   line-height: 1.5;  
     }
     a {
-      font-size: 14px !important; 
+      font-size: 12px !important; 
     }}
 
     .word {
-      /* Your default styles for words */
-      font-size: 16px; /* Change the font size as needed */
+     
+      font-size: 16px;
     }
     
-    /* Media query for mobile screens (e.g., screens with a max-width of 768px) */
+   
     @media (max-width: 768px) {
-      .word {
-        /* Your styles for words on mobile */
-        font-size: 12px; /* Adjust the font size for mobile screens */
-        white-space: nowrap; /* Prevent line breaks */
-      }
-    }
+     
+  .bottom-bar {
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  .word {
+    flex-basis: 20% !important; /* Two words per row */
+  }
+}
+
 
     .navbar-toggler{
       color: #30292900 !important;
