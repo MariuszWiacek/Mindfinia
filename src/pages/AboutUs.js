@@ -14,6 +14,10 @@ const landingBackground = {
   background: "linear-gradient(to bottom, #6AD7E5 50%, white 50%)",
 };
 
+const landingBackgroundMobile = {
+  background: "linear-gradient(to bottom, #6AD7E5 80%, white 20%)",
+};
+
 const cardStyle = {
   border: "none",
   borderRadius: "10px",
@@ -26,8 +30,14 @@ const p2Style = {
   fontSize: "18px",
   fontStyle: "normal",
   fontWeight: 400,
-  lineHeight: "154.5%", // 27.81px
+  lineHeight: "154.5%",
   letterSpacing: "0.99px",
+};
+
+const imageStyle = {
+  width: "100%",
+  height: "auto",
+  borderRadius: 20,
 };
 
 const aboutUsText = (
@@ -54,16 +64,21 @@ const aboutUsText = (
 );
 
 const AboutUs = () => {
+  const isMobile = window.innerWidth <= 768;
+
   return (
     <div style={aboutUsBackground}>
       <Navbar />
-      <div style={landingBackground}>
+      <div style={isMobile ? landingBackgroundMobile : landingBackground}>
         <Landing text={aboutUsText} />
       </div>
       <div className="container">
         <div className="col-md-12 mx-2 d-flex flex-column align-items-center w-100">
           <hr />
-          <h1 style={{ color: "black", textAlign: "center", fontFamily: "Syne", fontSize: "32px", fontStyle: "normal", fontWeight: "600", lineHeight: "154.5%" }}>Who Are We</h1>
+          <h1 
+          style={{ color: "black", textAlign: "center", fontFamily: "Syne", fontSize: "32px", fontStyle: "normal", fontWeight: "600", lineHeight: "154.5%" }}>
+            Who Are We
+          </h1>
           <p style={p2Style}>
             Welcome to Gravity Infosolutions, a visionary force reshaping the
             landscape of Digital Transformation, CRM, and Cloud Consulting. We
@@ -84,10 +99,10 @@ const AboutUs = () => {
           </p>
         </div>
         <div className="HeroAbout d-flex flex-row">
-          <div className="col-md-12 mx-2">
+          <div className={`col-md-12 mx-2 ${isMobile ? 'flex-column' : ''}`}>
             <div className="card shadow mb-4" style={cardStyle}>
-              <div className="card-body d-flex flex-row">
-                <div className="col-md-6">
+              <div className={`card-body d-flex flex-row ${isMobile ? 'flex-column' : ''}`}>
+                <div className={`col-md-6 ${isMobile ? 'mb-4' : 'd-md-flex'}`}>
                   <h3>Our Vision</h3>
                   <p style={p2Style}>
                     Welcome to Gravity Infosolutions, a visionary force
@@ -100,12 +115,12 @@ const AboutUs = () => {
                     unprecedented growth on a global scale.
                   </p>
                 </div>
-                <div className="col-md-6 d-md-flex">
+                <div className={`col-md-6 ${isMobile ? 'd-md-flex' : ''}`}>
                   <img
                     className="Imagehero"
                     src={Ourvision}
                     alt="Our Vision Image"
-                    style={{ width: "100%", height: 'auto', margin: "0" }}
+                    style={isMobile ? imageStyle : { width: "100%", height: 'auto', margin: "0" }}
                   />
                 </div>
               </div>
@@ -113,18 +128,18 @@ const AboutUs = () => {
           </div>
         </div>
         <div className="HeroAbout d-flex flex-row">
-          <div className="col-md-12 mx-2">
+          <div className={`col-md-12 mx-2 ${isMobile ? 'flex-column' : ''}`}>
             <div className="card shadow mb-4" style={cardStyle}>
-              <div className="card-body d-flex flex-row">
-                <div className="col-md-6 d-md-flex">
+              <div className={`card-body d-flex flex-row ${isMobile ? 'flex-column' : ''}`}>
+                <div className={`col-md-6 ${isMobile ? 'd-md-flex' : ''}`}>
                   <img
                     className="Imagehero"
                     src={Ourmission}
                     alt="Our Mission Image"
-                    style={{ width: "100%", height: 'auto' }}
+                    style={isMobile ? imageStyle : { width: "100%", height: 'auto' }}
                   />
                 </div>
-                <div className="col-md-6">
+                <div className={`col-md-6 ${isMobile ? 'mb-4' : ''}`}>
                   <h3>Our Mission</h3>
                   <p style={p2Style}>
                     Welcome to Gravity Infosolutions, a visionary force reshaping

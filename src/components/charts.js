@@ -11,12 +11,13 @@ const cardContainerStyle = {
 const cardStyle = {
   width: "30%",
   padding: "20px",
-  border: "1px solid #ccc",
+  border: "none",
   borderRadius: "5px",
   display: "flex",
   flexDirection: "column",
   alignItems: "center",
-  border: "none", background: "#F7F7FA"
+ 
+   background: "#F7F7FA"
 };
 
 const circleStyle = {
@@ -46,7 +47,7 @@ const pStyle = {
 
 const Charts = () => {
   return (
-    <div className="container"
+    <div 
     style={{
       display: "flex",
       flexDirection: "column",
@@ -54,6 +55,7 @@ const Charts = () => {
       alignItems: "center",
       minHeight: "50vh",
       background: "#F7F7FA",
+      width:"100%",
     }}>
       <div style={cardContainerStyle} className="row">
         <div style={cardStyle} className="col-md-4">
