@@ -71,9 +71,9 @@ const Workflow = () => {
             src={TrophyImage}
             alt="Trophy"
             style={{
-              height: "50px", // Adjust the size as needed
+              height: "50px", 
               position: "relative",
-              top: "9%", // Adjust the position vertically
+              top: "9%", 
               left: "0%",
             }}
           />

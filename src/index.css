@@ -91,7 +91,7 @@ letter-spacing: 0.99px;
       font-size: 18px !important; /* Adjust the font size for mobile devices */
     }
     h4 {
-      font-size: 7px !important; 
+      font-size: 5px !important; 
     }
     p {
       font-size: 14px;
@@ -100,6 +100,20 @@ letter-spacing: 0.99px;
     a {
       font-size: 14px !important; 
     }}
+
+    .word {
+      /* Your default styles for words */
+      font-size: 16px; /* Change the font size as needed */
+    }
+    
+    /* Media query for mobile screens (e.g., screens with a max-width of 768px) */
+    @media (max-width: 768px) {
+      .word {
+        /* Your styles for words on mobile */
+        font-size: 12px; /* Adjust the font size for mobile screens */
+        white-space: nowrap; /* Prevent line breaks */
+      }
+    }
 
 
   
