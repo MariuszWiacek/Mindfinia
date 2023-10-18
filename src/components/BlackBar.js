@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 
 const bottomBarStyle = {
   background: "black",
@@ -26,16 +26,12 @@ const bottomBarWords = [
 ];
 
 const BlackBar = () => {
-  // Define the number of words to display based on screen width
-  let wordsToDisplay = bottomBarWords;
-  if (window.innerWidth < 768) {
-    wordsToDisplay = bottomBarWords.slice(0, 4); // Display only the first 4 items on smaller screens
-  }
-
   return (
     <div style={bottomBarStyle}>
-      {wordsToDisplay.map((word, index) => (
-        <div key={index}>{word}</div>
+      {bottomBarWords.map((word, index) => (
+        <h4 className="word" key={index}>
+          {word}
+        </h4>
       ))}
     </div>
   );

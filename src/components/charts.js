@@ -46,7 +46,7 @@ const pStyle = {
 
 const Charts = () => {
   return (
-    <div className="charts container"
+    <div className="container"
     style={{
       display: "flex",
       flexDirection: "column",

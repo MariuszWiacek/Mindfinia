@@ -1,84 +1,82 @@
 import React from "react";
-import styled from "styled-components";
+import { Chrono } from "react-chrono";
+import TrophyImage from "../images/Trophy.png"; // Replace with the actual image path
 
-const Timeline = styled.div`
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-`;
-
-const TimelineItem = styled.div`
-  background: #f0f0f0;
-  border: 1px solid #ccc;
-  border-radius: 5px;
-  padding: 10px;
-  width: 200px;
-  text-align: center;
-  position: relative;
-  flex: 1;
-  margin: 5px;
-
-  &::before {
-    content: "";
-    position: absolute;
-    top: 50%;
-    left: -10px;
-    width: 10px;
-    height: 2px;
-    background: #007BFF; /* Blue line */
-  }
-
-  &:first-child::before {
-    content: none;
-  }
-`;
-
-const WorkFlow = () => {
-  const ourWork = [
+const Workflow = () => {
+  const workflowData = [
     {
-      id: 1,
+      id: "#1",
       title: "Consultation",
-      desc:
+      cardSubtitle:
         "We handle all aspects of vetting and choosing the right team that you don't have the time, expertise, or desire to do.",
     },
     {
-      id: 2,
+      id: "#2",
       title: "Planning",
-      desc:
+      cardSubtitle:
         "Sprint roadmap is a collective planning effort. Team members collaborate to clarify items and ensure shared understanding.",
     },
     {
-      id: 3,
+      id: "#3",
       title: "Implementation",
-      desc:
+      cardSubtitle:
         "We break monolithic apps into microservices. Decoupling the code allows teams to move faster and more independently.",
     },
     {
-      id: 4,
+      id: "#4",
       title: "Customization",
-      desc:
+      cardSubtitle:
         "Standups, weekly demos, and weekly reviews make sure everyone is on the same page and can raise their concerns.",
     },
   ];
 
+  const items = workflowData.map((item) => {
+    return {
+      title: item.title,
+      cardTitle: item.id,
+      cardSubtitle: item.cardSubtitle,
+      cardDetailedText: item.cardSubtitle,
+    };
+  });
+
   return (
-    <div className="workflow mb-5"><br></br>
-      <div style={{textAlign: "center"}}>
-            <hr className="hr-styled" style={{margin: "0 auto"}} />
-            <h1>Work Flow</h1>
-            <h1>How we work</h1>
-            <br></br>
-          </div>
-      <Timeline>
-        {ourWork.map((step) => (
-          <TimelineItem key={step.id}>
-            <div className="timeline-title">{step.title}</div>
-            <p>{step.desc}</p>
-          </TimelineItem>
-        ))}
-      </Timeline>
+    
+    <div><br></br>
+      <div className="container" style={{ textAlign: "center", width: "90%", margin: "auto" }}>
+        <hr className="hr-styled" style={{margin: "0 auto"}}/>
+        <h1 className="flow">Work Flow</h1>
+        <h1>How we Work</h1>
+      </div>
+      <div
+        style={{
+          display: "flex",
+          width: "95%", // Set to 90%
+          margin: "auto auto",
+        }}
+      >
+        <div style={{ flex: 9, position: "relative" }}>
+          <Chrono
+            items={items}
+            mode="HORIZONTAL"
+            scrollable={{ scrollbar: false }}
+            slideShow={{ autostart: true, interval: 0 }}
+          />
+        </div>
+        <div style={{ flex: 1, display: "flex", alignItems: "left" }}>
+          <img
+            src={TrophyImage}
+            alt="Trophy"
+            style={{
+              height: "50px", // Adjust the size as needed
+              position: "relative",
+              top: "9%", // Adjust the position vertically
+              left: "0%"
+            }}
+          />
+        </div>
+      </div>
     </div>
   );
 };
 
-export default WorkFlow;
+export default Workflow;

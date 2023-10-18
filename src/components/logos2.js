@@ -18,6 +18,7 @@ const mediaQuery = `@media screen and (max-width: 768px) {
 const Logos2 = () => {
   const containerStyles = {
     textAlign: "center",
+    
   };
 
   const hrStyles = {
@@ -50,10 +51,10 @@ const Logos2 = () => {
   };
 
   return (
-    <div style={containerStyles}>
+    <div div className="container" style={containerStyles}>
       <hr className="hr-styled" style={{margin: "0 auto"}} />
       <h1 style={headingStyles}>Our Valued Customer</h1>
-
+<br></br>
       <div style={logosWrapperStyles}>
         <style>{mediaQuery}</style>
         <div style={logoGroupStyles} className="logo-group">

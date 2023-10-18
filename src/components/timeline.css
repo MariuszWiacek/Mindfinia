@@ -1,0 +1,26 @@
+.timeline-container {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+  }
+  
+  .timeline-line {
+    width: 100px; /* Adjust the length of the connecting line as needed */
+    border-top: 2px solid #007BFF; /* Blue horizontal line */
+    margin-right: 10px; /* Adjust the margin as needed */
+  }
+  
+  .timeline-item {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+  }
+  
+  .timeline-year {
+    font-weight: bold;
+  }
+  
+  .timeline-event {
+    margin-top: 10px;
+  }
+  

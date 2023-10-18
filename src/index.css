@@ -78,4 +78,28 @@ letter-spacing: 0.99px;
   line-height: normal;
   letter-spacing: -0.09px;}
 
+  .container {
+    padding: 2%;
+  }
+  h4 {
+    font-size: 18px !important;
+
+    
+  }
+  @media (max-width: 767px) {
+    h3 {
+      font-size: 18px !important; /* Adjust the font size for mobile devices */
+    }
+    h4 {
+      font-size: 7px !important; 
+    }
+    p {
+      font-size: 14px;
+  line-height: 1.5;  
+    }
+    a {
+      font-size: 14px !important; 
+    }}
+
+
   

@@ -16,7 +16,7 @@ import BlackBar from "../components/BlackBar";
 import "./Home.css";
 
 const HomeText = (
-  <p style={{
+  <h3 style={{
     color: "#FFF",
     textAlign: "center",
     fontFamily: "Syne",
@@ -26,7 +26,7 @@ const HomeText = (
     lineHeight: "154.5%", /* 49.44px */
   }}>
     Mindfinia combines intellectual expertise ("Mind") with limitless technological possibilities ("Finia"), encapsulating a promise of strategic insight and boundless solutions for technology consulting and services
-  </p>
+  </h3>
 );
 
 const Home = () => {
