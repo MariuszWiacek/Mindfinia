@@ -1,6 +1,6 @@
-import React from "react";
+import React, { useEffect, useRef } from "react";
 import { Chrono } from "react-chrono";
-import TrophyImage from "../images/Trophy.png"; // Replace with the actual image path
+import TrophyImage from "../images/Trophy.png"; 
 
 const Workflow = () => {
   const workflowData = [
@@ -33,10 +33,11 @@ const Workflow = () => {
   const items = workflowData.map((item) => {
     return {
       title: item.title,
-      cardTitle: item.id,
+      cardTitle: (
+        <div style={{ fontSize: "1.5rem", color: "grey" }}>{item.id}</div>
+      ),
       cardSubtitle: item.cardSubtitle,
       cardDetailedText: item.cardSubtitle,
-      // Add your styles here
       style: {
         borderRadius: "9px",
         border: "1px solid var(--shade-primary-lite-bg, #E7DAED)",
@@ -54,7 +55,7 @@ const Workflow = () => {
       <div
         style={{
           display: "flex",
-          width: "95%", // Set to 90%
+          width: "90%", 
           margin: "auto auto",
         }}
       >
@@ -63,7 +64,7 @@ const Workflow = () => {
             items={items}
             mode="HORIZONTAL"
             scrollable={{ scrollbar: false }}
-            slideShow={{ autostart: true, interval: 4000 }} 
+            slideShow={{ autostart: true, interval: 0.1 }} 
           />
         </div>
         <div style={{ flex: 1, display: "flex", alignItems: "left" }}>

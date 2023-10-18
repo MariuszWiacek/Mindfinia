@@ -1,17 +1,5 @@
-import React from "react";
-
-const bottomBarStyle = {
-  background: "black",
-  color: "white",
-  padding: "10px 0",
-  textAlign: "center",
-  textTransform: "uppercase",
-  width: "100%",
-  fontWeight: "bold",
-  display: "flex",
-  justifyContent: "space-around",
-  margin: "0",
-};
+import React from 'react';
+import Slider from 'react-infinite-logo-slider';
 
 const bottomBarWords = [
   "STABILITY",
@@ -25,14 +13,37 @@ const bottomBarWords = [
   "IMPROVEMENT",
 ];
 
+const blackBarStyle = {
+  background: "black",
+  color: "white",
+  padding: "8px 0",
+  textAlign: "center",
+  textTransform: "uppercase",
+  width: "100%",
+  fontWeight: "bold",
+  display: "flex",
+  justifyContent: "space-between",
+  margin: "0",
+};
+
 const BlackBar = () => {
   return (
-    <div style={bottomBarStyle} className="bottom-bar">
-      {bottomBarWords.map((word, index) => (
-        <h4 className="word" key={index}>
-          {word}
-        </h4>
-      ))}
+    <div style={blackBarStyle} className="bottom-bar">
+      <Slider
+        width="250px"
+        duration={40}
+        pauseOnHover={true}
+        blurBorders={false}
+        blurBorderColor="#fff"
+      >
+        {bottomBarWords.map((word, index) => (
+          <Slider.Slide key={index}>
+            <h4 className="word" style={{ marginRight: `${word.length * 1.5}px` }}>
+              {word}
+            </h4>
+          </Slider.Slide>
+        ))}
+      </Slider>
     </div>
   );
 };
