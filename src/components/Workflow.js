@@ -36,14 +36,18 @@ const Workflow = () => {
       cardTitle: item.id,
       cardSubtitle: item.cardSubtitle,
       cardDetailedText: item.cardSubtitle,
+      // Add your styles here
+      style: {
+        borderRadius: "9px",
+        border: "1px solid var(--shade-primary-lite-bg, #E7DAED)",
+      },
     };
   });
 
   return (
-    
-    <div><br></br>
+    <div>
       <div className="container" style={{ textAlign: "center", width: "90%", margin: "auto" }}>
-        <hr className="hr-styled" style={{margin: "0 auto"}}/>
+        <hr className="hr-styled" style={{ margin: "0 auto" }} />
         <h1 className="flow">Work Flow</h1>
         <h1>How we Work</h1>
       </div>
@@ -59,7 +63,7 @@ const Workflow = () => {
             items={items}
             mode="HORIZONTAL"
             scrollable={{ scrollbar: false }}
-            slideShow={{ autostart: true, interval: 0 }}
+            slideShow={{ autostart: true, interval: 4000 }} 
           />
         </div>
         <div style={{ flex: 1, display: "flex", alignItems: "left" }}>
@@ -70,7 +74,7 @@ const Workflow = () => {
               height: "50px", // Adjust the size as needed
               position: "relative",
               top: "9%", // Adjust the position vertically
-              left: "0%"
+              left: "0%",
             }}
           />
         </div>
