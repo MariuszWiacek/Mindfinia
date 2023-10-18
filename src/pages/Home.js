@@ -49,6 +49,7 @@ const Home = () => {
         <Charts />
         <Logos2 />
         <Customers />
+        
         <Workflow />
         <div className="contact-us-section">
           <ContactUs />

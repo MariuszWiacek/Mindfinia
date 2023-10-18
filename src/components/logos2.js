@@ -21,7 +21,7 @@ const Logos2 = () => {
   };
 
   const hrStyles = {
-    /* Define your horizontal rule styling */
+    margin: "0 auto"
   };
 
   const headingStyles = {
@@ -51,7 +51,7 @@ const Logos2 = () => {
 
   return (
     <div style={containerStyles}>
-      <hr style={hrStyles} />
+      <hr className="hr-styled" style={{margin: "0 auto"}} />
       <h1 style={headingStyles}>Our Valued Customer</h1>
 
       <div style={logosWrapperStyles}>

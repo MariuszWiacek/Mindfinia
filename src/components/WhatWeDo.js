@@ -149,7 +149,7 @@ const WhatWeDo = () => {
   return (
     <div id="what-we-do-section" style={{ background: "#F7FEFF" }}>
       <div className="container" style={{ textAlign: "center", width: "90%", margin: "auto" }}>
-        <hr className="hr-styled" />
+        <hr className="hr-styled" style={{margin: "0 auto"}}/>
         <h1>Services we offer</h1>
         <CardContainer cards={cardData} />
       </div>
