@@ -113,27 +113,26 @@ const CardContainer = (props) => {
             onClick={() => handleIndexChange(index)}
           />
         ))}
+      </div>
       <div style={{ textAlign: "right", marginTop: "10px", display: "flex", alignItems: "center", justifyContent: "flex-end" }}>
-  <div style={{ display: "flex", alignItems: "center" }}>
-    <p style={{ color: "#D3D3D3", margin: "0" }}>01 </p>
-    {props.cards.map((_, index) => (
-      <span
-        key={index}
-        style={{
-          height: "3px",
-          width: "35px",
-          backgroundColor: activeIndex === index ? "#6AD7E5" : "#ddd",
-          display: "inline-block",
-          margin: "0 0px",
-          cursor: "pointer",
-        }}
-        onClick={() => handleIndexChange(index)}
-      />
-    ))}
-    <p style={{ color: "#6AD7E5", margin: "0" }}> 05</p>
-  </div>
-</div>
-
+        <div style={{ display: "flex", alignItems: "center" }}>
+          <p style={{ color: "#D3D3D3", margin: "0" }}>01 </p>
+          {props.cards.map((_, index) => (
+            <span
+              key={index}
+              style={{
+                height: "3px",
+                width: "35px",
+                backgroundColor: activeIndex === index ? "#6AD7E5" : "#ddd",
+                display: "inline-block",
+                margin: "0 0px",
+                cursor: "pointer",
+              }}
+              onClick={() => handleIndexChange(index)}
+            />
+          ))}
+          <p style={{ color: "#6AD7E5", margin: "0" }}> 05</p>
+        </div>
       </div>
     </div>
   );
@@ -168,12 +167,25 @@ const WhatWeDo = () => {
     },
   ];
 
+  // Determine whether you are on a mobile device based on screen width.
+  const isMobile = window.innerWidth < 768;
+
   return (
     <div id="what-we-do-section" style={{ background: "#F7FEFF" }}>
       <div className="container" style={{ textAlign: "center", width: "90%", margin: "auto" }}>
-        <hr className="hr-styled" style={{margin: "0 auto"}}/>
+        <hr className="hr-styled" style={{ margin: "0 auto" }} />
         <h1>Services we offer</h1>
-        <CardContainer cards={cardData} />
+
+        {isMobile ? (
+          <Card
+            title={cardData[0].title}
+            desc={cardData[0].desc}
+            image={cardData[0].image}
+            isActive={true}
+          />
+        ) : (
+          <CardContainer cards={cardData} />
+        )}
       </div>
     </div>
   );
