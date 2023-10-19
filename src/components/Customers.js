@@ -18,6 +18,8 @@ const testimonialStyles = {
     display: 'flex',
     flexDirection: 'column',
     alignItems: 'justify',
+    marginLeft: "8%",
+    marginRight: "8%",
   },
 
   quoteContainer: {
@@ -28,6 +30,9 @@ const testimonialStyles = {
     borderRadius: '5px',
     textAlign: 'center',
     overflow: 'hidden',
+    marginLeft: "25%",
+    marginRight: "25%"
+    
   },
 
   
@@ -35,7 +40,7 @@ const testimonialStyles = {
     position: 'absolute',
     left: '10px',
     top: '10px',
-    fontSize: '1.2rem',
+    fontSize: '1rem',
     'fa-primary-color': '#000000', // Customize the primary color
     'fa-secondary-color': '#ffffff', // Customize the secondary color
   },
@@ -44,14 +49,17 @@ const testimonialStyles = {
     position: 'absolute',
     right: '10px',
     bottom: '10px',
-    fontSize: '1.2rem',
+    fontSize: '1rem',
     '--fa-primary-color': '#000000', 
-    '--fa-secondary-color': '#ffffff', 
+    '--fa-secondary-color': 'white', 
   },
   
 
   quote: {
-    fontSize: '1.5rem',
+    fontSize: '18px',
+    fontFamily: "Rubik",
+    
+    
   },
 
   customerCards: {

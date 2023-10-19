@@ -6,6 +6,7 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   overflow-x: hidden;
+ 
 }
 
 svg.svg-inline--fa.fa-arrow-right {
@@ -107,6 +108,7 @@ code {
 
 .container {
   padding: 2%;
+ 
 }
 
 h4 {
