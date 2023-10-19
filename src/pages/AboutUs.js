@@ -100,10 +100,10 @@ const AboutUs = () => {
         </div>
         <div className="HeroAbout d-flex flex-row">
           <div className={`col-md-12 mx-2 ${isMobile ? 'flex-column' : ''}`}>
+            <h1>Our Vision</h1>
             <div className="card shadow mb-4" style={cardStyle}>
               <div className={`card-body d-flex flex-row ${isMobile ? 'flex-column' : ''}`}>
                 <div className={`col-md-6 ${isMobile ? 'mb-4' : 'd-md-flex'}`}>
-                  <h3>Our Vision</h3>
                   <p style={p2Style}>
                     Welcome to Gravity Infosolutions, a visionary force
                     reshaping the landscape of Digital Transformation, CRM, and
@@ -129,6 +129,7 @@ const AboutUs = () => {
         </div>
         <div className="HeroAbout d-flex flex-row">
           <div className={`col-md-12 mx-2 ${isMobile ? 'flex-column' : ''}`}>
+            <h1>Our Mission</h1>
             <div className="card shadow mb-4" style={cardStyle}>
               <div className={`card-body d-flex flex-row ${isMobile ? 'flex-column' : ''}`}>
                 <div className={`col-md-6 ${isMobile ? 'd-md-flex' : ''}`}>
@@ -140,7 +141,6 @@ const AboutUs = () => {
                   />
                 </div>
                 <div className={`col-md-6 ${isMobile ? 'mb-4' : ''}`}>
-                  <h3>Our Mission</h3>
                   <p style={p2Style}>
                     Welcome to Gravity Infosolutions, a visionary force reshaping
                     the landscape of Digital Transformation, CRM, and Cloud
