@@ -112,6 +112,27 @@ const CardContainer = (props) => {
             onClick={() => handleIndexChange(index)}
           />
         ))}
+      <div style={{ textAlign: "right", marginTop: "10px", display: "flex", alignItems: "center", justifyContent: "flex-end" }}>
+  <div style={{ display: "flex", alignItems: "center" }}>
+    <p style={{ color: "#D3D3D3", margin: "0" }}>01 </p>
+    {props.cards.map((_, index) => (
+      <span
+        key={index}
+        style={{
+          height: "3px",
+          width: "35px",
+          backgroundColor: activeIndex === index ? "#6AD7E5" : "#ddd",
+          display: "inline-block",
+          margin: "0 0px",
+          cursor: "pointer",
+        }}
+        onClick={() => handleIndexChange(index)}
+      />
+    ))}
+    <p style={{ color: "#6AD7E5", margin: "0" }}> 05</p>
+  </div>
+</div>
+
       </div>
     </div>
   );
