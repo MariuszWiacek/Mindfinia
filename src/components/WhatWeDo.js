@@ -61,7 +61,7 @@ const Card = (props) => {
 };
 
 const CardContainer = (props) => {
-  const [activeIndex, setActiveIndex] = useState(0);
+  const [activeIndex, setActiveIndex] = useState(2);
   const containerRef = useRef(null);
   const cardWidth = 272;
 
@@ -84,6 +84,7 @@ const CardContainer = (props) => {
           overflowX: "hidden",
           position: "relative",
           transition: "scroll-left 0.5s",
+          alignItems: "flex-start",
         }}
       >
         {props.cards.map((card, index) => (
