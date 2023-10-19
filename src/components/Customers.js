@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import {
   faQuoteLeft,
@@ -32,17 +32,15 @@ const testimonialStyles = {
     overflow: 'hidden',
     marginLeft: "25%",
     marginRight: "25%"
-    
   },
 
-  
   leftQuote: {
     position: 'absolute',
     left: '10px',
     top: '10px',
     fontSize: '1rem',
-    'fa-primary-color': '#000000', // Customize the primary color
-    'fa-secondary-color': '#ffffff', // Customize the secondary color
+    '--fa-primary-color': '#000000',
+    '--fa-secondary-color': 'white',
   },
 
   rightQuote: {
@@ -50,23 +48,20 @@ const testimonialStyles = {
     right: '10px',
     bottom: '10px',
     fontSize: '1rem',
-    '--fa-primary-color': '#000000', 
-    '--fa-secondary-color': 'white', 
+    '--fa-primary-color': '#000000',
+    '--fa-secondary-color': 'white',
   },
-  
 
   quote: {
     fontSize: '18px',
     fontFamily: "Rubik",
-    
-    
   },
 
   customerCards: {
     display: 'flex',
     justifyContent: 'space-around',
-    flexWrap: 'nowrap', 
-    overflowX: 'hidden', 
+    flexWrap: 'nowrap',
+    overflowX: 'hidden',
   },
 
   customerCard: {
@@ -81,7 +76,7 @@ const testimonialStyles = {
 
   active: {
     border: 'none',
-    filter: 'none', 
+    filter: 'none',
   },
 
   inactive: {
@@ -113,7 +108,32 @@ const testimonialStyles = {
 
   star: {
     color: 'gold',
+    fontSize: '1rem',
   },
+};
+
+const mobileStyles = {
+  star: {
+    color: 'gold',
+    fontSize: '0.5rem',
+  },
+
+  quote: {
+    fontSize: '15px',
+    
+    
+  },
+
+  customerImage: {
+    width: '50px',
+    height: '50px',
+    borderRadius: '50%',
+  },
+
+  quoteContainer: {
+    marginLeft: "15%",
+    marginRight: "15%"
+  }
 };
 
 const testimonials = [
@@ -162,6 +182,19 @@ const testimonials = [
 const CustomerTestimonial = () => {
   const defaultActiveIndex = testimonials.findIndex(testimonial => testimonial.id === 3);
   const [currentTestimonial, setCurrentTestimonial] = useState(defaultActiveIndex);
+  const [windowWidth, setWindowWidth] = useState(window.innerWidth);
+
+  useEffect(() => {
+    const handleResize = () => {
+      setWindowWidth(window.innerWidth);
+    };
+
+    window.addEventListener('resize', handleResize);
+
+    return () => {
+      window.removeEventListener('resize', handleResize);
+    };
+  }, []);
 
   const nextTestimonial = () => {
     const next = (currentTestimonial + 1) % testimonials.length;
@@ -175,9 +208,16 @@ const CustomerTestimonial = () => {
 
   return (
     <div style={testimonialStyles.testimonialSlider}>
-      <div style={testimonialStyles.quoteContainer}>
+      <div style={
+        windowWidth < 768
+            ? mobileStyles.quoteContainer
+            : testimonialStyles.quoteContainer}>
         <FontAwesomeIcon icon={faQuoteLeft} style={testimonialStyles.leftQuote} />
-        <p style={testimonialStyles.quote}>{testimonials[currentTestimonial].quote}</p>
+        <p style={
+          windowWidth < 768
+            ? mobileStyles.quote
+            : testimonialStyles.quote
+        }>{testimonials[currentTestimonial].quote}</p>
         <FontAwesomeIcon icon={faQuoteRight} style={testimonialStyles.rightQuote} />
       </div>
       <div style={testimonialStyles.customerCards}>
@@ -188,13 +228,27 @@ const CustomerTestimonial = () => {
               ...testimonialStyles.customerCard,
               ...(currentTestimonial === index ? testimonialStyles.active : testimonialStyles.inactive),
             }}
-            onClick={() => setCurrentTestimonial(index)} 
+            onClick={() => setCurrentTestimonial(index)}
           >
             <div>
               {[...Array(testimonial.rating)].map((_, i) => (
-                <FontAwesomeIcon key={i} icon={faStar} style={testimonialStyles.star} />
+                <FontAwesomeIcon
+                  key={i}
+                  icon={faStar}
+                  style={
+                    windowWidth < 768 ? mobileStyles.star : testimonialStyles.star
+                  }
+                />
               ))}
-              <img src={testimonial.Image} alt={`Customer ${testimonial.id}`} style={testimonialStyles.customerImage} />
+              <img
+                src={testimonial.Image}
+                alt={`Customer ${testimonial.id}`}
+                style={
+                  windowWidth < 768
+                    ? mobileStyles.customerImage
+                    : testimonialStyles.customerImage
+                }
+              />
               <p>{testimonial.name}</p>
               <p>{testimonial.role}</p>
             </div>
