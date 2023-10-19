@@ -116,6 +116,9 @@ h4 {
 }
 
 @media (max-width: 767px) {
+  body {
+    overflow-x: hidden;
+  }
   h3 {
     font-size: 18px !important;
     /* Adjust the font size for mobile devices */
