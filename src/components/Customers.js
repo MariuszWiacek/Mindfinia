@@ -30,12 +30,12 @@ const testimonialStyles = {
     borderRadius: '5px',
     textAlign: 'center',
     overflow: 'hidden',
-    marginLeft: "25%",
-    marginRight: "25%"
+    marginLeft: "30%",
+    marginRight: "30%"
   },
 
   leftQuote: {
-    position: 'absolute',
+    position: "absolute",
     left: '10px',
     top: '10px',
     fontSize: '1rem',
@@ -101,8 +101,8 @@ const testimonialStyles = {
   },
 
   customerImage: {
-    width: '100px',
-    height: '100px',
+    width: '120px',
+    height: '120px',
     borderRadius: '50%',
   },
 
@@ -120,8 +120,6 @@ const mobileStyles = {
 
   quote: {
     fontSize: '15px',
-    
-    
   },
 
   customerImage: {
@@ -131,8 +129,8 @@ const mobileStyles = {
   },
 
   quoteContainer: {
-    marginLeft: "15%",
-    marginRight: "15%"
+    marginLeft: "25%",
+    marginRight: "25%"
   }
 };
 
@@ -212,13 +210,13 @@ const CustomerTestimonial = () => {
         windowWidth < 768
             ? mobileStyles.quoteContainer
             : testimonialStyles.quoteContainer}>
-        <FontAwesomeIcon icon={faQuoteLeft} style={testimonialStyles.leftQuote} />
+        <FontAwesomeIcon icon={faQuoteLeft} style={windowWidth < 768 ? mobileStyles.leftQuote : testimonialStyles.leftQuote} />
         <p style={
           windowWidth < 768
             ? mobileStyles.quote
             : testimonialStyles.quote
         }>{testimonials[currentTestimonial].quote}</p>
-        <FontAwesomeIcon icon={faQuoteRight} style={testimonialStyles.rightQuote} />
+        <FontAwesomeIcon icon={faQuoteRight} style={windowWidth < 768 ? mobileStyles.rightQuote : testimonialStyles.rightQuote} />
       </div>
       <div style={testimonialStyles.customerCards}>
         {testimonials.map((testimonial, index) => (
@@ -249,8 +247,8 @@ const CustomerTestimonial = () => {
                     : testimonialStyles.customerImage
                 }
               />
-              <p>{testimonial.name}</p>
-              <p>{testimonial.role}</p>
+              <p className='text'>{testimonial.name}</p>
+              <p className='text2'> {testimonial.role}</p>
             </div>
           </div>
         ))}

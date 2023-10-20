@@ -67,7 +67,7 @@ const Workflow = () => {
           margin: "auto auto",
         }}
       >
-        <div style={{ flex: 9, position: "relative" }}>
+        <div style={{ flex: 9, position: "relative"}}>
           <Chrono
             items={items}
             mode="HORIZONTAL"

@@ -8,16 +8,26 @@ body {
   overflow-x: hidden;
  
 }
+.text {
+  
+  font-family: Rubik;
+  color:  lightskyblue;
+}
 
+.text2 {
+  
+  font-family: Rubik;
+  color: rgb(0, 0, 0);
+}
 svg.svg-inline--fa.fa-arrow-right {
-  color: rgb(0, 26, 255) !important;
+  color:  lightskyblue !important;
   background-color: #ffffff !important;
  margin-left: 35% !important;
   border-color: #1A202C !important;
   font-size: 35px !important;
 }
 svg.svg-inline--fa.fa-arrow-left {
-  color: rgb(0, 26, 255) !important;
+  color: lightskyblue !important;
   background-color: #ffffff !important;
   margin-right: 35% !important;
   font-size: 35px !important;
@@ -123,6 +133,19 @@ h4 {
     margin: 0;
     padding: 0;
   }
+
+  .text {
+    font-size: 10px;
+    font-family: Rubik;
+    color: rgb(0, 0, 0);
+  }
+
+  .text2 {
+    font-size: 10px;
+    font-family: Rubik;
+    color:  lightskyblue;
+  }
+ 
   h3 {
     font-size: 18px !important;
     /* Adjust the font size for mobile devices */
