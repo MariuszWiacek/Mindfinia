@@ -167,7 +167,7 @@ const WhatWeDo = () => {
     },
   ];
 
-  // Determine whether you are on a mobile device based on screen width.
+ 
   const isMobile = window.innerWidth < 768;
 
   return (

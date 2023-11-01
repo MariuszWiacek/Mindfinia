@@ -4,19 +4,19 @@ import { FaFacebook, FaTwitter, FaInstagram, FaLinkedin } from "react-icons/fa";
 
 
 const iconStyle = {
-  backgroundColor: "#fff", // Background color for the icons
-  borderRadius: "50%", // Make the icons round
+  backgroundColor: "#fff", 
+  borderRadius: "50%", 
   display: "inline-flex",
   alignItems: "center",
   justifyContent: "center",
-  width: "40px", // Adjust the width and height as needed
+  width: "40px", 
   height: "40px",
-  margin: "5px", // Add some spacing between icons
+  margin: "5px", 
 };
 
 const iconColorStyle = {
-  color: "#013220", // Color for the icons (e.g., white)
-  fontSize: "20px", // Adjust the icon size as needed
+  color: "#013220", 
+  fontSize: "20px", 
 };
 
 const ContactUs = () => {

@@ -1,5 +1,5 @@
 import React from "react";
-import aboutImage from "../images/aboutImage.png"; // Import your image source
+import aboutImage from "../images/aboutImage.png"; 
 
 const WhoWeAre = () => {
   return (
@@ -29,12 +29,12 @@ const WhoWeAre = () => {
           {/* Your rounded image */}
           <div
             style={{
-              boxShadow: "5px 5px 10px lightblue", // Add a light blue shadow
+              boxShadow: "5px 5px 10px lightblue",
               borderRadius: "10%",
             }}
           >
             <img
-              src={aboutImage} // Use the imported image source
+              src={aboutImage} 
               alt="Who We Are"
               style={{
                 width: "100%",

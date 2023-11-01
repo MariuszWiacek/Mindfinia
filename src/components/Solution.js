@@ -35,12 +35,12 @@ const Solution = () => {
           {/* Your rounded image */}
           <div
             style={{
-              boxShadow: "5px 5px 10px lightblue", // Add a light blue shadow
+              boxShadow: "5px 5px 10px lightblue", 
               borderRadius: "10%",
             }}
           >
             <img
-              src={image4} // Use the imported image source
+              src={image4} 
               alt="Who We Are"
               style={{
                 width: "100%",
